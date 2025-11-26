@@ -7,7 +7,10 @@ int main()
     cin.tie(NULL);
     int n;
     cin >> n;
-    for (int i = 1; i <=n; i++)
+    if(n<2){
+        cout<<-1;
+    }
+    for (int i = 2; i <=n; i++)
     {
         if (i % 2 == 0)
         {
