@@ -1,37 +1,55 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 int main()
 {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-
     int t;
     cin >> t;
     while (t--)
     {
         int n;
         cin >> n;
-        vector<int> v(n);
+        int a[n];
         for (int i = 0; i < n; i++)
         {
-            cin >> v[i];
+            cin >> a[i];
         }
-        vector<int> ans;
-        for (int i = 0; i < n; i++)
+        if (n <= 3)
         {
-            int mx = v[i];
-            for (int j = i; j < n; j++)
-
+ 
+            for (int i = 0; i < n; i++)
             {
-                mx = max(mx, v[j]);
-                ans.push_back(mx);
+                int mx = a[i];
+ 
+                for (int j = i; j < n; j++)
+                {
+                    if (a[j] > mx)
+                    {
+                        mx = a[j];
+                    }
+                    cout << mx << " ";
+                }
             }
         }
-        for (auto x : ans)
-            cout << x << " ";
-            cout<<'\n';
+        else
+        {
+            for (int length = 1; length <= n; length++)
+            {
+                for (int start = 0; start <= n - length; start++)
+                {
+                    int current_max = a[start];
+                    for (int k = start; k < start + length; k++)
+                    {
+                        if (a[k] > current_max)
+                        {
+                            current_max = a[k];
+                        }
+                    }
+                    cout << current_max << " ";
+                }
+            }
+        }
+        cout<<endl;
     }
-
+ 
     return 0;
 }
