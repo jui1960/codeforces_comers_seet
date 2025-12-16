@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int r, c;
+    cin >> r >> c;
+
+    vector<vector<int>> a(r, vector<int>(c));
+
+
+    for (int i = 0; i < r; i++) {
+        for (int j = 0; j < c; j++) {
+            cin >> a[i][j];
+        }
+    }
+
+    int x;
+    cin >> x;
+
+    bool found = false;
+
+    for (int i = 0; i < r; i++) {
+        for (int j = 0; j < c; j++) {
+            if (a[i][j] == x) {
+                found = true;
+                break;
+            }
+        }
+        if (found) break;
+    }
+
+    if (!found)
+        cout << "will take number";
+    else
+        cout << "will not take number";
+
+    return 0;
+}
