@@ -12,21 +12,11 @@ int main()
     {
         int n;
         cin >> n;
-        if (n == 2)
-            cout << 1 << '\n';
+        if (n % 2 != 0)
+            cout << 0 << '\n';
 
-        else if (n >= 4)
-        {
-            int cnt = n / 4;
-            if (n % 4 != 0)
-            {
-                cnt++;
-                cout << cnt << '\n';
-            }
-            else
-                cout << cnt << '\n';
-        }
-        else cout<<0<<'\n';
+        else
+            cout << (n / 4) + 1 << '\n';
     }
 
     return 0;
